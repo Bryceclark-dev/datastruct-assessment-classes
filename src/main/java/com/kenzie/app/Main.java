@@ -16,6 +16,13 @@ public class Main {
         //
         // Your Code Here
 
+        if(source.getBalance() >= amount){
+            source.makeWithdrawal(amount);
+            recipient.makeDeposit(amount);
+            System.out.println("Payment completed. Transferred " + amount + " from " + source.getAccountId() + " to " + recipient.getAccountId());
+        }else{
+            System.out.println("Payment failed. Insufficient Funds.");
+        }
     }
 
     public static void main(String[] args) {
